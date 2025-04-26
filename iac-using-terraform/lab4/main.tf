@@ -17,10 +17,6 @@ resource "aws_instance" "demo-instance" {
   vpc_security_group_ids = [aws_security_group.test-security-group.id]
 }
 
-resource "aws_eip" "demo-eip" {
-  instance = aws_instance.demo-instance.id
-}
-
 resource "aws_security_group" "test-security-group" {
   name        = "test-security-group"
   description = "test-security-group"
@@ -52,14 +48,10 @@ resource "aws_security_group" "test-security-group" {
   }
 }
 
-output "instance_ip_addr_public" {
-  value = aws_eip.demo-eip.public_ip
-}
-
-output "instance_ip_addr_private" {
-  value = aws_instance.demo-instance.private_ip
-}
-
 output "security_group_id" {
   value = aws_security_group.test-security-group.id
+}
+
+output "instance_ip_address_private" {
+  value = "aws_instance.demo-instance.private_ip"
 }
