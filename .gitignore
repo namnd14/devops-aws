@@ -26,3 +26,7 @@ yarn-error.log
 /docker-basic-operation/lab4-multi-stage-docker-file/build
 db
 .aws-sam
+
+# keypair file
+**/keypair/
+keypair/
