@@ -7,10 +7,10 @@ terraform {
     }
   }
   backend "s3" {
-    bucket         = "udemy-terraform-state-singapore-linh"
-    key            = "udemy-terraform"
+    bucket         = "my-aws-bucket-namnd"
+    key            = "terraform"
     region         = "ap-southeast-1"
-    dynamodb_table = "udemy-terraform-state"
+    dynamodb_table = "my-dynamodb-table"
   }
 }
 provider "aws" {
